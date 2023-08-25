@@ -1,0 +1,40 @@
+<div class='container'>
+    <h1>URL Shortner</h1>
+    <main>
+        <p>Create Shortened URLs easily for effective sharing</p>
+
+        <%= form_for :url_form, url: create_shortened_url_path, method: :post do |f| %>
+            <%= f.text_field :original_url,  placeholder: 'Paste URL here' %>
+            <%= f.submit 'Shorten' %>
+        <% end %>
+
+        <% if flash[:shortened_url_code].present? %>
+            <p>Shortened URL Code: 
+                 <%= link_to flash[:shortened_url_code], root_path(flash[:shortened_url_code]), id: 'shortened-url-code' %>
+            </p>
+        <% end %>
+    </main>
+</div>
+
+
+<style>
+    .container{
+        margin: auto;
+        text-align: center;
+
+        & h1 {
+            font-size: 50px;
+        }
+
+        & form {
+            margin: 50px;
+
+            & input {
+                margin: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+        }
+    }
+</style>
