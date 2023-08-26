@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   def index
-    @shortened_url = params[:shortened_url_code]
+    @shortened_url_code = flash[:shortened_url_code] if flash[:shortened_url_code]
+    @shortened_url_data = ShortenedUrl.find_by(shortened_code: flash[:shortened_url_code])
+    @original_url = @shortened_url_data.original_url if @shortened_url_data
   end
 
   def create_shortened_url
