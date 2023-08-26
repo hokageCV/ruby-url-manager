@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_24_114553) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_26_140134) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_24_114553) do
     t.string "original_url", null: false
     t.string "shortened_code"
     t.integer "user_id"
-    t.datetime "expires_at"
+    t.datetime "expires_at", default: -> { "(now() + 'PT1H'::interval)" }
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shortened_code"], name: "index_shortened_urls_on_shortened_code", unique: true
