@@ -8,7 +8,9 @@
             <%= f.submit 'Shorten' %>
         <% end %>
 
-        <% if flash[:shortened_url_code].present? %>
+            <% if flash[:error].present? %>
+            <p class="error"><%= flash[:error] %></p>
+        <% elsif flash[:shortened_url_code].present? %>
             <p>Shortened URL Code: 
                  <%= link_to flash[:shortened_url_code], root_path(flash[:shortened_url_code]), id: 'shortened-url-code' %>
             </p>

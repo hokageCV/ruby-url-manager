@@ -5,11 +5,17 @@ class HomeController < ApplicationController
 
   def create_shortened_url
     original_url = params[:url_form][:original_url]
-    shortened_code = generate_unique_shortened_code
-    new_url_data = ShortenedUrl.create(original_url: original_url, shortened_code: shortened_code)
 
-    flash[:shortened_url_code] = new_url_data.shortened_code
-    redirect_to root_path
+    if WebUrl.valid?(original_url)
+      shortened_code = generate_unique_shortened_code
+      new_url_data = ShortenedUrl.create(original_url: original_url, shortened_code: shortened_code)
+
+      flash[:shortened_url_code] = new_url_data.shortened_code
+      redirect_to root_path
+    else
+      flash[:error] = "Invalid URL"
+      redirect_to root_path
+    end
   end
 
   private
