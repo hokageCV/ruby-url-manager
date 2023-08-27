@@ -10,7 +10,9 @@ class HomeController < ApplicationController
 
     if WebUrl.valid?(original_url)
       shortened_code = UidGenerator.generate_unique_code
-      new_url_data = ShortenedUrl.create(original_url: original_url, shortened_code: shortened_code)
+      expires_at = user_signed_in? ? nil : 1.hour.from_now
+    
+      new_url_data = ShortenedUrl.create(original_url: original_url, shortened_code: shortened_code, expires_at: expires_at)
 
       flash[:shortened_url_code] = new_url_data.shortened_code
     else
