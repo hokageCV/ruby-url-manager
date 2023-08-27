@@ -1,24 +1,16 @@
-# README
+# URL Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple URL shortener application built with Ruby on Rails. This application allows users to create shortened URLs for effective sharing. It supports user authentication and provides an easy way to generate short codes for URLs.
 
-Things you may want to cover:
+### Features
 
-* Ruby version
+-   User registration and authentication.
+-   Creation of shortened URLs.
+-   User-friendly interface for creating and managing shortened URLs.
 
-* System dependencies
+### Usage
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-   Register or log in to create and manage shortened URLs.
+-   On the homepage, enter the original URL you want to shorten and submit the form.
+-   The application will generate a unique short code for the URL.
+-   Share the shortened URL with others for easy access to the original URL.
