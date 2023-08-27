@@ -1,0 +1,50 @@
+<nav>
+    <div class='nav-headings'>
+        <h2 class='heading'>URL Shortner</h2>
+    </div>
+    <div class='nav-menu'>
+        <% if user_signed_in? %>
+            <p> <%= current_user.email %> </p>
+            <%= button_to "Logout", destroy_user_session_path,  method: :delete %>
+        <% else %>
+            <%= link_to "Login", new_user_session_path %>
+        <% end %>
+    </div>
+</nav>
+
+<style>
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        padding: 10px;
+    
+        & .nav-headings{
+            margin-right: auto;
+
+            & .heading {
+                font-size: 40px;
+            }
+        }
+
+        & .nav-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            & p {
+                margin-right: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+
+            & .nav-headings{
+                margin: 10px;     
+        }
+        }
+    }
+</style>
