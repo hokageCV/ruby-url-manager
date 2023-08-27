@@ -1,6 +1,6 @@
 <%= render partial: '/shared/navbar' %>
 <h3>My URLs</h3>
-<main>
+<main class='user-urls-container'>
     <ul>
       <% @user_urls.each do |url| %>
         <li>
@@ -17,12 +17,3 @@
     </ul>
   </main>
 <%= link_to 'Back to Home', root_path %>
-
-
-<style>
-  main {
-    & li {
-      margin: 20px 10px;
-    }
-  }
-</style>

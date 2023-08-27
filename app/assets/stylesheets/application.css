@@ -76,3 +76,71 @@ html {
     background-color: var(--baseBG);
     color: var(--primary);
 }
+
+/* ================================================= */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    & .nav-headings {
+        margin-right: auto;
+
+        & .heading {
+            font-size: 40px;
+        }
+    }
+
+    & .nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        & p,
+        & a {
+            margin-right: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        & .nav-headings {
+            margin: 10px;
+        }
+    }
+}
+
+/* ================================================= */
+
+.home-container {
+    margin: auto;
+    text-align: center;
+
+    & form {
+        margin: 50px;
+
+        & input {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    }
+}
+
+/* ================================================= */
+
+.user-urls-container {
+    & li {
+        margin: 20px 10px;
+    }
+}
+
+/* ================================================= */
+/* ================================================= */
