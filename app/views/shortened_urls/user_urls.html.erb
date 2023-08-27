@@ -5,6 +5,12 @@
       <% @user_urls.each do |url| %>
         <li>
           <p>Original URL: <%= link_to url.original_url, url.original_url %> </p>
+           <p>Shortened URL: 
+              <%= link_to request.base_url + '/' + url.shortened_code, 
+                request.base_url + '/' + url.shortened_code,
+                target: '_blank'
+              %>
+           </p>
           <p><%= button_to 'Delete', shortened_url_path(url), method: :delete %></p>
         </li>
       <% end %>
@@ -16,7 +22,7 @@
 <style>
   main {
     & li {
-      margin: 20px 0;
+      margin: 20px 10px;
     }
   }
 </style>
