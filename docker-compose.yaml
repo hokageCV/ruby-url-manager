@@ -1,6 +1,7 @@
 version: '3'
 services:
   db:
+    container_name: url_manager-db
     image: 'postgres:15-bookworm'
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -8,7 +9,8 @@ services:
       - .env
 
   
-  rails:
+  app:
+    container_name: url_manager-app
     build:
       context: .
       dockerfile: Dockerfile
