@@ -57,14 +57,7 @@ a {
 
 /* ============================================ */
 :root {
-    /* --baseBG: #ffffff;
-    --primary: #228ba5;
-    --secondary: #c4e9f3;
-    --accent: #28a4c3;
-    --cardBG: #f2f3f3;
-    --cardAccent: #d3e8ed; */
-
-    --baseBG: #1e2a31;
+    --baseBG: #1c2f48;
     --primary: #dcf3ff;
     --secondary: #9bbcd1;
     --accent: #7aa93c;
@@ -105,10 +98,18 @@ nav {
         & a {
             margin-right: 20px;
         }
+
+        & button {
+            background-color: var(--secondary);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     }
 
     @media (max-width: 768px) {
         flex-direction: column;
+        margin-bottom: 100px;
 
         & .nav-headings {
             margin: 10px;
@@ -131,16 +132,100 @@ nav {
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+
+        & .submit-btn {
+            background-color: var(--accent);
+            border-color: var(--cardAccent);
+            cursor: pointer;
+        }
     }
 }
 
 /* ================================================= */
 
-.user-urls-container {
-    & li {
-        margin: 20px 10px;
+.my-urls {
+    padding: 20px;
+
+    & .back-link {
+        font-size: 16px;
+    }
+
+    & h3 {
+        margin-top: 10px;
+    }
+
+    & .user-urls-container {
+        margin: 5px auto;
+
+        & ul {
+            & li {
+                margin: 20px 10px;
+
+                & button {
+                    background-color: #ae5b8e;
+                    border-color: var(--cardAccent);
+                    border-radius: 5px;
+                    cursor: pointer;
+                    padding: 2px 5px;
+                }
+            }
+        }
     }
 }
 
 /* ================================================= */
+
+.auth-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px auto;
+
+    & form {
+        margin-top: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        & .field {
+            margin: 20px;
+            width: 100%;
+
+            & input {
+                border-radius: 5px;
+                width: 100%;
+                padding: 5px;
+            }
+
+            &:has(input[type='checkbox']) {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-items: center;
+
+                & input[type='checkbox'] {
+                    width: min-content;
+                    margin: 0px 5px;
+                }
+            }
+        }
+
+        & .actions {
+            align-self: center;
+            margin: 20px 5px;
+
+            & input {
+                background-color: var(--secondary);
+                padding: 5px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 /* ================================================= */

@@ -2,12 +2,12 @@
 <main class='home-container'>
     <p>Create Shortened URLs easily for effective sharing</p>
     <% if !user_signed_in? %>
-        <p>Sign in to keep the URLs for more than an hour </p>
+        <p>Sign in to manage all your URLs</p>
     <% end %>
 
     <%= form_for :url_form, url: create_shortened_url_path, method: :post do |f| %>
         <%= f.text_field :original_url,  placeholder: 'Paste URL here' %>
-        <%= f.submit 'Shorten' %>
+        <%= f.submit 'Shorten', class: 'submit-btn' %>
     <% end %>
 
     <% if flash[:error].present? %>
