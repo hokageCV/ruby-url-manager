@@ -74,3 +74,5 @@ end
 
 gem 'dotenv-rails'
 gem "devise", "~> 4.9"
+
+gem 'whenever', require: false
